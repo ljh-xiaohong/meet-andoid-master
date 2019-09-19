@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F5F7"
+    android:orientation="vertical"
+    tools:context=".activities.creation.ArticleEditActivity">
+
+    <RelativeLayout
+        android:id="@+id/edit_article_layout_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/iv_edit_article_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:src="@mipmap/icon_fanhui_b" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="编辑文章"
+            android:textColor="@color/color_232323"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_edit_article_submit"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:text="发布"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/ll_edit_article_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F2F5F7"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:background="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="上传文章封面"
+                        android:textColor="#333333"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:text="用于首页文章展示"
+                        android:textColor="#999999"
+                        android:textSize="11sp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                    <ImageView
+                        android:id="@+id/iv_add_article_cover"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_marginEnd="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@mipmap/add_picture" />
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#E6E6E6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#ffffff"
+                    android:orientation="horizontal"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="标签：" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RadioGroup
+                            android:id="@+id/edit_article_layout_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center|left"
+                            android:gravity="center"
+                            android:checkedButton="@+id/edit_label_init"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/edit_label_init"
+                                style="@style/article_tag_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@null"
+                                android:drawableLeft="@null"
+                                android:layout_marginLeft="10dp"
+                                android:text="无" />
+
+                        </RadioGroup>
+                    </HorizontalScrollView>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#E6E6E6" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp">
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="配置商品"
+                        android:textColor="#333333"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:src="@mipmap/icon_home_vip"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView18"
+                        app:layout_constraintStart_toEndOf="@+id/textView18"
+                        app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:rotation="180"
+                        android:src="@mipmap/icon_nav_return"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:background="#F2F5F7" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_article_edit_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@null"
+                android:hint="文章标题"
+                android:padding="15dp"
+                android:textColorHint="#333333"
+                android:textSize="21sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_rectangle_dash"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="添加"
+            android:textColor="#A2A2A2"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_add_image_edit_article"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/icon_article_edit_pic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图片"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_add_text_edit_article"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/icon_article_edit_font" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="文字"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_add_video_edit_article"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/icon_article_edit_video" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#2D2D2D"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_add_music_edit_article"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/icon_article_edit_bot_music" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="添加音乐"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/ll_preview_edit_article"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/icon_article_edit_bot_preview" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="预览"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
